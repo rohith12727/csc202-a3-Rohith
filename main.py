@@ -29,13 +29,15 @@ class HNode:
     left: HTree
     right: HTree
 
+
+HTList: TypeAlias = Union["HTLNode", None]
+
 @dataclass(frozen = True)
 class HTLNode:
     value: HTree
-    rest: "HTList"
+    rest: HTList
 
 
-HTList: TypeAlias = Union[HTLNode, None]
 
 # Return True if Huff1 is less than Huff2.
 def tree_lt(Huff1: HTree, Huff2:HTree) ->bool:
